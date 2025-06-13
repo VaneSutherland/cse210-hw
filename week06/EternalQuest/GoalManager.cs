@@ -136,7 +136,6 @@ public class GoalManager
                 case "SimpleGoal":
                     _goals.Add(new SimpleGoal(details[0], details[1], int.Parse(details[2]))
                     {
-                        // Ajusta si se necesita reintegrar _isComplete (con constructor o propiedad extra)
                     });
                     break;
                 case "EternalGoal":
@@ -145,7 +144,6 @@ public class GoalManager
                 case "ChecklistGoal":
                     var goal = new ChecklistGoal(details[0], details[1], int.Parse(details[2]),
                                                  int.Parse(details[4]), int.Parse(details[3]));
-                    // Simular progresos anteriores:
                     for (int j = 0; j < int.Parse(details[5]); j++) goal.RecordEvent();
                     _goals.Add(goal);
                     break;
